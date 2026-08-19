@@ -3,6 +3,9 @@
 @theme {
   --font-sans: 'Golos Text', system-ui, sans-serif;
 
+  --text-2xs: 0.625rem;
+  --breakpoint-xs: 30rem;
+
   --color-background: #f5f7fb;
   --color-surface: #ffffff;
   --color-surface-elevated: #edf1f7;
@@ -16,6 +19,10 @@
   --color-accent-blue: #2884f6;
   --color-accent-hover: #9262f7;
   --color-accent-soft: #e1dff7;
+
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
 
   --shadow-sm: 0 1px 2px rgba(11, 14, 20, 0.05);
   --shadow-md: 0 4px 12px rgba(11, 14, 20, 0.1);
@@ -40,6 +47,18 @@ html[data-theme='dark'] {
   --color-accent-hover: #5419c2;
   --color-accent-soft: #211f3d;
 
+  --color-success: #4ade80;
+  --color-success-hover: #22c55e;
+  --color-success-soft: #4ade8026;
+
+  --color-warning: #fbbf24;
+  --color-warning-hover: #f59e0b;
+  --color-warning-soft: #fbbf2426;
+
+  --color-error: #f87171;
+  --color-error-hover: #ef4444;
+  --color-error-soft: #f8717126;
+
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
@@ -60,6 +79,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-wrap-style: balance;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;

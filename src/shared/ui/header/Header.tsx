@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Button } from '@/shared/ui/button'
+import { Logo } from '@/shared/ui/logo'
 import { Sun, Moon, Menu } from 'lucide-react'
-import logo from '@/assets/flowpilot-logo.png'
 
 export const Header = ({ isDarkMode, onToggleDarkMode }: { isDarkMode: boolean; onToggleDarkMode: () => void }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -11,13 +11,7 @@ export const Header = ({ isDarkMode, onToggleDarkMode }: { isDarkMode: boolean; 
   return (
     <header className="h-18 bg-surface-elevated backdrop-blur-sm shadow-sm sticky top-0 z-50 transition-all duration-300">
       <div className="container mx-auto px-6 h-full flex items-center justify-between">
-        <div className="flex items-center gap-1">
-          <img src={logo} alt="FlowPilot" className="h-8 w-auto" />
-          <div className="logo-name inline text-lg font-bold">
-            <span className="text-text-primary">Flow</span>
-            <span className="text-accent">Pilot</span>
-          </div>
-        </div>
+        <Logo />
 
         <nav className={`max-sm:hidden flex gap-8 ${isMenuOpen ? 'flex' : ''}`}>
           <a href="#product" className="text-text-secondary font-medium transition-all duration-300 hover:text-accent">

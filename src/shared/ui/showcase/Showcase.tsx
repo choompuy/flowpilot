@@ -1,34 +1,43 @@
+import { Button } from '@/shared/ui/button'
+import { ProductPreview } from '@/shared/ui/product-preview'
+import { CircleCheck } from 'lucide-react'
+
 export const Showcase = () => {
   return (
-    <section className="py-24 bg-surface" id="showcase">
-      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-        <div>
-          <h2 className="text-5xl font-bold mb-6 text-text-primary">Powerful dashboard for your team</h2>
-          <p className="text-lg text-text-secondary leading-relaxed">Manage projects, track progress and automate workflows.</p>
+    <section className="py-24 bg-surface overflow-hidden" id="showcase">
+      <div className="container grid max-xs:grid-rows-[auto_calc(27.5rem*.55)] max-sm:grid-rows-[auto_calc(27.5rem*.75)] max-lg:grid-rows-[auto_27.5rem] lg:grid-cols-[9fr_10fr] items-center mx-auto gap-5 px-6">
+        <div className="flex flex-col gap-5">
+          <p className="text-lg text-accent uppercase font-medium">Productivity, Simplified</p>
+          <h2 className="text-5xl font-semibold text-text-primary leading-tight">Everything you need in one place</h2>
+          <p className="text-lg text-text-secondary leading-relaxed">
+            FlowPilot brings together tasks, projects, team collaboration, and analytics in a single, beautiful interface.
+          </p>
+
+          <ul className="flex flex-col gap-2">
+            <li className="flex items-center gap-3 text-text-primary">
+              <CircleCheck size={24} fill="var(--color-accent-soft)" stroke="var(--color-accent)" /> Intuitive task management
+            </li>
+            <li className="flex items-center gap-3 text-text-primary">
+              <CircleCheck size={24} fill="var(--color-accent-soft)" stroke="var(--color-accent)" /> Real-time team collaboration
+            </li>
+            <li className="flex items-center gap-3 text-text-primary">
+              <CircleCheck size={24} fill="var(--color-accent-soft)" stroke="var(--color-accent)" /> Advanced analytics dashboard
+            </li>
+            <li className="flex items-center gap-3 text-text-primary">
+              <CircleCheck size={24} fill="var(--color-accent-soft)" stroke="var(--color-accent)" /> Smart notifications
+            </li>
+          </ul>
+
+          <div>
+            <Button variant="secondary" href="#explore" className="rounded-full!">
+              Explore All Features
+            </Button>
+          </div>
         </div>
-        <div className="bg-background border border-border rounded-2xl p-8 shadow-lg">
-          <div className="flex flex-col gap-5">
-            <div className="flex items-center gap-4">
-              <div className="w-30 font-semibold text-text-primary">Marketing</div>
-              <div className="flex-1 h-2 bg-border rounded-full overflow-hidden">
-                <div className="h-full bg-brand rounded-full transition-all duration-300" style={{ width: '85%' }}></div>
-              </div>
-              <div className="w-10 text-right font-semibold text-accent">85%</div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="w-30 font-semibold text-text-primary">Development</div>
-              <div className="flex-1 h-2 bg-border rounded-full overflow-hidden">
-                <div className="h-full bg-brand rounded-full transition-all duration-300" style={{ width: '62%' }}></div>
-              </div>
-              <div className="w-10 text-right font-semibold text-accent">62%</div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="w-30 font-semibold text-text-primary">Research</div>
-              <div className="flex-1 h-2 bg-border rounded-full overflow-hidden">
-                <div className="h-full bg-brand rounded-full transition-all duration-300" style={{ width: '45%' }}></div>
-              </div>
-              <div className="w-10 text-right font-semibold text-accent">45%</div>
-            </div>
+
+        <div className="relative size-full">
+          <div className="absolute inset-0 origin-top-left scale-55 xs:scale-75 sm:scale-100">
+            <ProductPreview page="tasks" className='w-180! h-110!' noSidebar />
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ interface ButtonProps {
 }
 
 export const Button = ({ variant = 'primary', size = 'normal', children, onClick, href, className = '' }: ButtonProps) => {
-  const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 cursor-pointer select-none'
+  const baseClasses = 'shrink-0 inline-flex items-center justify-center gap-1 rounded-lg font-semibold transition-all duration-200 cursor-pointer select-none'
 
   const variantClasses = {
     primary: [
@@ -44,7 +44,7 @@ export const Button = ({ variant = 'primary', size = 'normal', children, onClick
   }
 
   const sizeClasses = {
-    small: 'p-2 text-sm',
+    small: 'min-w-10 h-10 px-2 text-sm',
     normal: 'h-12 px-4 text-base',
     large: 'h-16 px-8 text-lg'
   }

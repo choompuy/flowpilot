@@ -1,6 +1,6 @@
-import { LayoutDashboard, ListTodo, SquareKanban, Calendar, ChartLine, UsersRound, CheckCircle2, Clock3, ArrowUpRight } from "lucide-react"
+import { LayoutDashboard, ListTodo, Inbox, ChartLine, Sparkles, CheckCircle2, Clock3, ArrowUpRight } from 'lucide-react'
 
-const dashboardSidebar = [
+export const sidebarItems = [
   {
     title: 'Overview',
     icon: LayoutDashboard
@@ -10,24 +10,21 @@ const dashboardSidebar = [
     icon: ListTodo
   },
   {
-    title: 'Projects',
-    icon: SquareKanban
-  },
-  {
-    title: 'Calendar',
-    icon: Calendar
+    title: 'Inbox',
+    icon: Inbox,
+    notify: 5
   },
   {
     title: 'Analytics',
     icon: ChartLine
   },
   {
-    title: 'Team',
-    icon: UsersRound
+    title: 'AI assistant',
+    icon: Sparkles
   }
 ]
 
-const dashboardData = {
+export const overviewData = {
   overview: {
     totalTasks: 248,
     completedTasks: 186,
@@ -88,15 +85,15 @@ const dashboardData = {
 }
 
 const currentProductivity = Math.round(
-  dashboardData.productivity.currentWeek.reduce((acc, item) => acc + item.value, 0) / dashboardData.productivity.currentWeek.length
+  overviewData.productivity.currentWeek.reduce((acc, item) => acc + item.value, 0) / overviewData.productivity.currentWeek.length
 )
-const completedPercent = Math.round((dashboardData.overview.completedTasks / dashboardData.overview.totalTasks) * 100)
+const completedPercent = Math.round((overviewData.overview.completedTasks / overviewData.overview.totalTasks) * 100)
 
-const dashboardStats = [
+export const statsCards = [
   {
     title: 'Total Tasks',
     icon: ListTodo,
-    value: dashboardData.overview.totalTasks,
+    value: overviewData.overview.totalTasks,
     change: 24,
     changeType: ' tasks'
   },
@@ -104,7 +101,7 @@ const dashboardStats = [
   {
     title: 'Completed',
     icon: CheckCircle2,
-    value: dashboardData.overview.completedTasks,
+    value: overviewData.overview.completedTasks,
     change: completedPercent,
     changeType: ' tasks'
   },
@@ -112,7 +109,7 @@ const dashboardStats = [
   {
     title: 'In Progress',
     icon: Clock3,
-    value: `${dashboardData.overview.pendingTasks}`,
+    value: `${overviewData.overview.pendingTasks}`,
     change: 32,
     changeType: ' tasks'
   },
@@ -125,5 +122,3 @@ const dashboardStats = [
     changeType: ' %'
   }
 ]
-
-export { dashboardSidebar, dashboardData, dashboardStats }
